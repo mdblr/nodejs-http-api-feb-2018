@@ -4,7 +4,7 @@
   "description": "app that allows users to request a list of names on the server or query that list for a name in that list.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./src/**/*.spec.js --watch"
   },
   "repository": {
     "type": "git",
