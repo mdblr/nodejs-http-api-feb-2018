@@ -2,7 +2,6 @@
 const namesObject = require('../../names.mock.json');
 
 function searchNames(nameQuery) {
-  // TODO: check is type string
 
   if (!nameQuery.trim()) {
     throw new Error('Name cannot be blank');

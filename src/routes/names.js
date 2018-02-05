@@ -3,10 +3,10 @@
 const express = require('express');
 const router = express.Router();
 
-const { searchNames, searchNamess } = require('../controllers/names');
+const { searchNames, getNames } = require('../controllers/names');
 
 router.get('/all', (req, res) => {
-  const names = searchNamess();
+  const names = getNames();
   res.json(names);
 });
 
