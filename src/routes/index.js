@@ -6,7 +6,7 @@ const router = express.Router();
 const names = require('./names');
 
 router.get('/', (req, res) => {
-  res.json({hello: 'world'});
+  res.sendFile('index.html', { root: 'src/public' });
 })
 
 router.use('/names', names);
