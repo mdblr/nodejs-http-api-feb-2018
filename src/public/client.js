@@ -1,5 +1,10 @@
+'use strict';
+
+window.app = {};
+
 (() => {
-  init();
+
+  window.app.init = init;
 
   function init() {
     tableDataFetchAll();

@@ -4,6 +4,7 @@
   "description": "app that allows users to request a list of names on the server or query that list for a name in that list.",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon src/app.js",
     "test": "mocha src/test/**/*.js"
   },
   "repository": {
@@ -26,8 +27,12 @@
   "homepage": "https://github.com/mdblr/nodejs-http-api-feb-2018#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "chai-http": "^3.0.0",
     "karma": "^2.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.3.0",
     "mocha": "^5.0.0",
     "nodemon": "^1.14.12"
   },
