@@ -1,11 +1,9 @@
 'use strict';
 
 const expect = require('chai').expect;
-// TODO: re-require data per test
-const mockData = require('../../names.mock.json');
+const mockData = require('../../../names.mock.json');
 
-const { searchNames, getNames } = require('./names');
-
+const { searchNames, getNames } = require('../../controllers/names');
 
 describe('names controller', () => {
   describe('searchNames', () => {
@@ -30,8 +28,14 @@ describe('names controller', () => {
     });
 
     it('should match stored names using partial name as input', () => {
-      const output = searchNames('Sylvia');
-      expect(output).to.include('Sylvia Rivera');
+      const firstOutput = searchNames('Sylvia');
+      expect(firstOutput).to.include('Sylvia Rivera');
+
+      const lastOutput = searchNames('Mendoza');
+      expect(lastOutput).to.include('Anita Mendoza');
+
+      const middleOutput = searchNames('iel Crai');
+      expect(middleOutput).to.include('Daniel Craig');
     });
 
     it('should match stored names using full name as input', () => {
@@ -44,11 +48,10 @@ describe('names controller', () => {
       const output = searchNames('Lorem Ipsum Omega Theta O');
       expect(output).to.have.length(0);
     });
-
   });
 
-// TODO modify getNames to feel more like you're working with network calls
   describe('getNames', () => {
+
     it('should be typeof "function"', () => {
       expect(getNames).to.be.a('function');
     });
@@ -63,6 +66,5 @@ describe('names controller', () => {
       const onlyStrings = names.every(name => typeof name === 'string');
       expect(onlyStrings).to.be.true;
     });
-
   });
 });

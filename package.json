@@ -4,7 +4,7 @@
   "description": "app that allows users to request a list of names on the server or query that list for a name in that list.",
   "main": "app.js",
   "scripts": {
-    "test": "mocha ./src/**/*.spec.js --watch"
+    "test": "mocha src/test/**/*.js"
   },
   "repository": {
     "type": "git",
