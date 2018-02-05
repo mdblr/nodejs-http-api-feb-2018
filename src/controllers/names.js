@@ -1,7 +1,17 @@
 'use strict';
 const namesObject = require('../../names.mock.json');
 
-function getName(nameQuery) {
+function searchNames(nameQuery) {
+  // TODO: check is type string
+
+  if (!nameQuery.trim()) {
+    throw new Error('Name cannot be blank');
+  }
+
+  if(typeof nameQuery !== 'string') {
+    throw new Error(`Expected string but got: ${typeof nameQuery}`);
+  }
+
   const { names } = getNames();
   const RE = new RegExp(`${nameQuery}`, 'ig');
   const results = names.filter(name => RE.test(name));
@@ -13,6 +23,6 @@ function getNames() {
 }
 
 module.exports = {
-  getName,
+  searchNames,
   getNames
-}
+};
