@@ -3,6 +3,7 @@ const app = express();
 
 const api = require('./routes');
 
+app.use(express.static(`${__dirname}/public`));
 app.use('/', api);
 
 const port = 3000;
