@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon src/app.js",
-    "test": "mocha src/test/**/*.js"
+    "serverTests": "mocha src/test/server/*.js",
+    "clientTests": "./node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",
